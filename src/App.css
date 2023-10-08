@@ -1,38 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap');
+/* App */
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-around;
+  margin: 1.5rem;
+}
+
+/* Control Section */
+
+
+.control {
+  text-align: center;
+  margin-right: 1.5rem;
+  font-family: 'Red Hat Display', sans-serif;
+  color: red;
+}
+
+
+/* Search Wrapper */
+.search-wrapper {
+  max-width: 100%;
+  background: white;
+  border: 1px solid lightgray;
+  font-family: 'Red Hat Display', sans-serif;
+  overflow: hidden;
+}
+
+/* Search Wrapper Hover and Focus Styles */
+.search-wrapper:hover,
+.search-wrapper:focus {
+  border: 1px solid #ccc;
+}
+
+/* Input Styles */
+input {
+  outline: none;
+  font-size: 1rem;
+  border: 1px solid lightgray;
+  padding: 0.5rem;
+  margin: 1rem;
+  border-radius: 15px;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+/* Search Control (Button and Input) */
+.search-control {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+/* Button Styles */
+button {
+  background: #01ac01;
+  border: 1px solid lightgray;
   color: white;
+  padding: 0.5rem;
+  margin: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: 'Red Hat Display', sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+/* Result Box Styles */
+.result {
+  cursor: pointer;
+  text-align: left;
+  padding: 0.5rem;
+  font-size: 0.85rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Result Box Hover Style */
+.result:hover {
+  background: whitesmoke;
+}
+
+/* Map Area */
+#map-area {
+  height: 90vh;
+  width: 100%;
+  position: relative;
+}
+
+
+/* Responsive Media Queries */
+@media screen and (max-width: 800px) {
+  /* Adjust layout for smaller screens */
+  .App {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .control {
+    margin-right: 0;
   }
+
+  .result {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  /* Adjust layout for even smaller screens */
+  .search-control {
+    display: block;
+  }
+
+  button {
+    margin: -1rem 0 0.5rem;
+  }
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 100px;
+  right: 60px;
+  max-height: 400px;
+  max-width: 400px;
 }
